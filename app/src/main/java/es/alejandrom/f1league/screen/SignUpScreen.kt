@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -22,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import es.alejandrom.f1league.R
 import es.alejandrom.f1league.components.login.PasswordField
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -41,7 +43,7 @@ fun SignUpScreen(navController: NavHostController) {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        "Create Account",
+                        text = stringResource(id = R.string.sign_up),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -52,7 +54,7 @@ fun SignUpScreen(navController: NavHostController) {
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = "Back button")
+                            contentDescription = stringResource(id = R.string.back_button))
                     }
                 }
             )
@@ -73,7 +75,7 @@ fun SignUpScreen(navController: NavHostController) {
                     value = email,
                     onValueChange = setEmail,
                     label = {
-                        Text("Email")
+                        Text(stringResource(id = R.string.email))
                     },
                     modifier = Modifier.fillMaxWidth(),
                     keyboardOptions = KeyboardOptions(
@@ -91,7 +93,7 @@ fun SignUpScreen(navController: NavHostController) {
                     value = emailConfirmation,
                     onValueChange = setEmailConfirmation,
                     label = {
-                        Text("Email confirmation")
+                        Text(stringResource(id = R.string.email_confirmation))
                     },
                     modifier = Modifier.fillMaxWidth(),
                     keyboardOptions = KeyboardOptions(
@@ -123,7 +125,7 @@ fun SignUpScreen(navController: NavHostController) {
 
                 PasswordField(
                     password = passwordConfirmation,
-                    label = "Password confirmation",
+                    label = stringResource(id = R.string.password_confirmation),
                     passwordVisibility = passwordVisibility,
                     onPasswordChange = setPasswordConfirmation,
                     onPasswordVisibilityChange = setPasswordVisibility,
@@ -137,7 +139,7 @@ fun SignUpScreen(navController: NavHostController) {
                     .height(50.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = "Create account", style = MaterialTheme.typography.labelLarge)
+                Text(text = stringResource(id = R.string.sign_up), style = MaterialTheme.typography.labelLarge)
             }
         }
     }

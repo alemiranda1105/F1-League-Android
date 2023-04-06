@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -20,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import es.alejandrom.f1league.R
 import es.alejandrom.f1league.components.login.PasswordField
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -37,7 +39,7 @@ fun LoginScreen(navController: NavHostController) {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        "Log in",
+                        text = stringResource(id = R.string.login),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -48,7 +50,7 @@ fun LoginScreen(navController: NavHostController) {
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = "Back button")
+                            contentDescription = stringResource(id = R.string.back_button))
                     }
                 }
             )
@@ -69,7 +71,7 @@ fun LoginScreen(navController: NavHostController) {
                     value = email,
                     onValueChange = setEmail,
                     label = {
-                        Text("Email")
+                        Text(stringResource(id = R.string.email))
                     },
                     modifier = Modifier.fillMaxWidth(),
                     keyboardOptions = KeyboardOptions(
@@ -98,7 +100,10 @@ fun LoginScreen(navController: NavHostController) {
                     .height(50.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = "Sign up", style = MaterialTheme.typography.labelLarge)
+                Text(
+                    text = stringResource(id = R.string.login),
+                    style = MaterialTheme.typography.labelLarge
+                )
             }
         }
     }

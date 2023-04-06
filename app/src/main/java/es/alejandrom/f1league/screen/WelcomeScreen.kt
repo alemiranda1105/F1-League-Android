@@ -6,10 +6,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import es.alejandrom.f1league.R
 import es.alejandrom.f1league.routes.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -20,7 +22,7 @@ fun WelcomeView(navController: NavHostController) {
         topBar = {
                  LargeTopAppBar(
                      title = {
-                         Text(text = "Welcome")
+                         Text(text = stringResource(id = R.string.welcome))
                      }
                  )
         }
@@ -34,7 +36,7 @@ fun WelcomeView(navController: NavHostController) {
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "Welcome to F1 League! Sign in or create an account to start playing with your friends",
+                    text = stringResource(id = R.string.welcome_message),
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier
                         .padding(bottom = 32.dp)
@@ -51,7 +53,7 @@ fun WelcomeView(navController: NavHostController) {
                             .height(50.dp),
                         shape = RoundedCornerShape(20.dp)
                     ) {
-                        Text(text = "Login", style = MaterialTheme.typography.labelLarge)
+                        Text(text = stringResource(id = R.string.login), style = MaterialTheme.typography.labelLarge)
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
@@ -61,7 +63,7 @@ fun WelcomeView(navController: NavHostController) {
                             .height(50.dp),
                         shape = RoundedCornerShape(20.dp)
                     ) {
-                        Text(text = "Sign up", style = MaterialTheme.typography.labelLarge)
+                        Text(text = stringResource(id = R.string.sign_up), style = MaterialTheme.typography.labelLarge)
                     }
                 }
         }
