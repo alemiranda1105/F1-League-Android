@@ -17,15 +17,22 @@ import androidx.compose.ui.text.input.*
 @Composable
 fun PasswordField(
     password: String,
+    label: String = "Password",
     passwordVisibility: Boolean,
     onPasswordChange: (String) -> Unit,
     onPasswordVisibilityChange: (Boolean) -> Unit,
+    keyboardOptions: KeyboardOptions = KeyboardOptions(
+        capitalization = KeyboardCapitalization.None,
+        autoCorrect = false,
+        keyboardType = KeyboardType.Password,
+        imeAction = ImeAction.None
+    ),
     keyboardActions: KeyboardActions
 ) {
     TextField(
         value = password,
         onValueChange = onPasswordChange,
-        label = { Text("Password") },
+        label = { Text(label) },
         visualTransformation = if (passwordVisibility) VisualTransformation.None else PasswordVisualTransformation(),
         trailingIcon = {
             IconButton(onClick = { onPasswordVisibilityChange(!passwordVisibility) }) {
@@ -36,12 +43,7 @@ fun PasswordField(
             }
         },
         modifier = Modifier.fillMaxWidth(),
-        keyboardOptions = KeyboardOptions(
-            capitalization = KeyboardCapitalization.None,
-            autoCorrect = false,
-            keyboardType = KeyboardType.Password,
-            imeAction = ImeAction.None
-        ),
+        keyboardOptions = keyboardOptions,
         keyboardActions = keyboardActions
     )
 }
