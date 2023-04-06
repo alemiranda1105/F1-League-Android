@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import es.alejandrom.f1league.routes.Routes
+import es.alejandrom.f1league.routes.LoginActivityRoutes
 import es.alejandrom.f1league.screen.LoginScreen
 import es.alejandrom.f1league.screen.SignUpScreen
 import es.alejandrom.f1league.screen.WelcomeView
@@ -38,14 +38,14 @@ class LoginActivity : ComponentActivity() {
 @Composable
 fun LoginView() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Routes.WELCOME.route) {
-        composable(Routes.WELCOME.route) {
+    NavHost(navController = navController, startDestination = LoginActivityRoutes.WELCOME.route) {
+        composable(LoginActivityRoutes.WELCOME.route) {
             WelcomeView(navController = navController)
         }
-        composable(Routes.LOGIN.route) {
+        composable(LoginActivityRoutes.LOGIN.route) {
             LoginScreen(navController = navController)
         }
-        composable(Routes.SIGNUP.route) {
+        composable(LoginActivityRoutes.SIGNUP.route) {
             SignUpScreen(navController = navController)
         }
     }

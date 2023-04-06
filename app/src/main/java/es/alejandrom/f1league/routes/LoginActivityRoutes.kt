@@ -1,6 +1,6 @@
 package es.alejandrom.f1league.routes
 
-enum class Routes(val route: String) {
+enum class LoginActivityRoutes(val route: String) {
     LOGIN("login"),
     SIGNUP("signup"),
     WELCOME("welcome")
