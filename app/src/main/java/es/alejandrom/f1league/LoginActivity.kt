@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import es.alejandrom.f1league.routes.Routes
+import es.alejandrom.f1league.screen.LoginScreen
 import es.alejandrom.f1league.screen.WelcomeView
 import es.alejandrom.f1league.ui.theme.F1LeagueTheme
 
@@ -41,7 +42,7 @@ fun LoginView() {
             WelcomeView(navController = navController)
         }
         composable(Routes.LOGIN.route) {
-            // create the Login view
+            LoginScreen(navController = navController)
         }
         composable(Routes.SIGNUP.route) {
             // create the Sign up view
