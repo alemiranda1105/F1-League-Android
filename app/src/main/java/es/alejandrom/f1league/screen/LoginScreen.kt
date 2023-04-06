@@ -82,7 +82,9 @@ fun LoginScreen(navController: NavHostController) {
                     ),
                     keyboardActions = KeyboardActions(onNext = {
                         focusManager.moveFocus(FocusDirection.Down)
-                    })
+                    }),
+                    singleLine = true,
+                    maxLines = 1
                 )
 
                 PasswordField(

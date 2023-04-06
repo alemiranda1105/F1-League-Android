@@ -46,6 +46,8 @@ fun PasswordField(
         },
         modifier = Modifier.fillMaxWidth(),
         keyboardOptions = keyboardOptions,
-        keyboardActions = keyboardActions
+        keyboardActions = keyboardActions,
+        singleLine = true,
+        maxLines = 1
     )
 }

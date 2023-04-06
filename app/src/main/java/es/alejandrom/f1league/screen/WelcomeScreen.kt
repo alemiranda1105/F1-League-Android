@@ -51,7 +51,11 @@ fun WelcomeView(navController: NavHostController) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
-                        shape = RoundedCornerShape(20.dp)
+                        shape = RoundedCornerShape(20.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
+                        )
                     ) {
                         Text(text = stringResource(id = R.string.login), style = MaterialTheme.typography.labelLarge)
                     }
@@ -61,7 +65,11 @@ fun WelcomeView(navController: NavHostController) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
-                        shape = RoundedCornerShape(20.dp)
+                        shape = RoundedCornerShape(20.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.secondary,
+                            contentColor = MaterialTheme.colorScheme.onSecondary
+                        )
                     ) {
                         Text(text = stringResource(id = R.string.sign_up), style = MaterialTheme.typography.labelLarge)
                     }
