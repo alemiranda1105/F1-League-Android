@@ -80,7 +80,7 @@ fun LoginContent(
 
             PasswordField(
                 password = password,
-                label = stringResource(id = R.string.password_confirmation),
+                label = stringResource(id = R.string.password),
                 onPasswordChange = { newValue ->
                     password = newValue
                 },
