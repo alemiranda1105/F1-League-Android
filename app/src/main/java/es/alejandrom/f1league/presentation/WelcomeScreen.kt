@@ -1,4 +1,4 @@
-package es.alejandrom.f1league.screen
+package es.alejandrom.f1league.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -9,14 +9,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import es.alejandrom.f1league.R
 import es.alejandrom.f1league.routes.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WelcomeView(navController: NavHostController) {
+fun WelcomeScreen(
+    navigateToLoginScreen: () -> Unit,
+    navigateToSignUpScreen: () -> Unit
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
@@ -47,7 +49,7 @@ fun WelcomeView(navController: NavHostController) {
                         .padding(bottom = 32.dp)
                 ) {
                     Button(
-                        onClick = { navController.navigate(Routes.LOGIN.route) },
+                        onClick = navigateToLoginScreen,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
@@ -61,7 +63,7 @@ fun WelcomeView(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
-                        onClick = { navController.navigate(Routes.SIGNUP.route) },
+                        onClick = navigateToSignUpScreen,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
@@ -82,5 +84,12 @@ fun WelcomeView(navController: NavHostController) {
 @Composable
 fun WelcomeViewPreview() {
     val navController = rememberNavController()
-    WelcomeView(navController = navController)
+    WelcomeScreen(
+        navigateToLoginScreen = {
+            navController.navigate(Routes.LOGIN.route)
+        },
+        navigateToSignUpScreen = {
+            navController.navigate(Routes.SIGNUP.route)
+        }
+    )
 }
