@@ -10,7 +10,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import es.alejandrom.f1league.presentation.HomeScreen
 import es.alejandrom.f1league.presentation.login.LoginScreen
-import es.alejandrom.f1league.presentation.SignUpScreen
+import es.alejandrom.f1league.presentation.signup.SignUpScreen
 import es.alejandrom.f1league.presentation.WelcomeScreen
 import es.alejandrom.f1league.routes.Routes
 
