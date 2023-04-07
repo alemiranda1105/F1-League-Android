@@ -1,17 +1,18 @@
 package es.alejandrom.f1league.navigation
 
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import es.alejandrom.f1league.presentation.HomeScreen
+import es.alejandrom.f1league.presentation.WelcomeScreen
 import es.alejandrom.f1league.presentation.login.LoginScreen
 import es.alejandrom.f1league.presentation.signup.SignUpScreen
-import es.alejandrom.f1league.presentation.WelcomeScreen
 import es.alejandrom.f1league.routes.Routes
 
 @Composable
@@ -21,8 +22,8 @@ fun NavGraph(navController: NavHostController) {
     AnimatedNavHost(
         navController = navController,
         startDestination = Routes.WELCOME.route,
-        enterTransition = { EnterTransition.None },
-        exitTransition = { ExitTransition.None }
+        enterTransition = { scaleIn() } ,
+        exitTransition = { scaleOut(animationSpec = tween(durationMillis = 250)) }
     ) {
         composable(Routes.WELCOME.route) {
             WelcomeScreen(
