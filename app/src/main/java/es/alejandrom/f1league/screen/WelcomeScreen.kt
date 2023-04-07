@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import es.alejandrom.f1league.R
-import es.alejandrom.f1league.routes.LoginActivityRoutes
+import es.alejandrom.f1league.routes.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +47,7 @@ fun WelcomeView(navController: NavHostController) {
                         .padding(bottom = 32.dp)
                 ) {
                     Button(
-                        onClick = { navController.navigate(LoginActivityRoutes.LOGIN.route) },
+                        onClick = { navController.navigate(Routes.LOGIN.route) },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
@@ -61,7 +61,7 @@ fun WelcomeView(navController: NavHostController) {
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                     Button(
-                        onClick = { navController.navigate(LoginActivityRoutes.SIGNUP.route) },
+                        onClick = { navController.navigate(Routes.SIGNUP.route) },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp),
