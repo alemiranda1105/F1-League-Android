@@ -24,6 +24,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import es.alejandrom.f1league.R
 import es.alejandrom.f1league.components.PasswordField
@@ -106,4 +107,12 @@ fun LoginContent(
             )
         }
     }
+}
+
+@Preview
+@Composable
+@ExperimentalComposeUiApi
+fun LoginScreenPreview() {
+    val previewLogin: (email: String, password: String) -> Unit = { _, _ -> }
+    LoginContent(padding = PaddingValues(1.dp), login = previewLogin)
 }
