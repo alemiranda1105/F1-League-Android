@@ -1,4 +1,4 @@
-package es.alejandrom.f1league.components.login
+package es.alejandrom.f1league.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardActions

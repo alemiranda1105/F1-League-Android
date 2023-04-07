@@ -26,7 +26,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import es.alejandrom.f1league.R
-import es.alejandrom.f1league.components.login.PasswordField
+import es.alejandrom.f1league.components.PasswordField
 
 @Composable
 @ExperimentalComposeUiApi
